@@ -1,10 +1,11 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 /*!
  * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', 'Jeju Gothic', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
 p {
@@ -32,7 +33,8 @@ h6 {
   font-weight: 700;
 }
 hr.star-light,
-hr.star-primary {
+hr.star-primary,
+hr.none {
   padding: 0;
   border: none;
   border-top: solid 5px;
@@ -69,7 +71,11 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
+  background-image: url('../img/header.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
 }
 header .container {
@@ -80,12 +86,19 @@ header img {
   display: block;
   margin: 0 auto 20px;
 }
+header .intro-text {
+  text-shadow: 3px 3px 5px black;
+}
 header .intro-text .name {
   display: block;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
+}
+.p {
+  font-size: 1.25em;
+  font-weight: 300;
 }
 header .intro-text .skills {
   font-size: 1.25em;
@@ -100,6 +113,9 @@ header .intro-text .skills {
     font-size: 4.75em;
   }
   header .intro-text .skills {
+    font-size: 1.75em;
+  }
+  .p {
     font-size: 1.75em;
   }
 }
@@ -157,6 +173,9 @@ header .intro-text .skills {
   background-color: #18BC9C;
   color: white;
   border-color: #18BC9C;
+}
+table tr td {
+  text-align: center;
 }
 @media (min-width: 768px) {
   .navbar-custom {
