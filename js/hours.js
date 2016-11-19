@@ -1,4 +1,4 @@
-var goal = new Date(2016, 11, 20, 14, 30, 0, 0);
+var goal = new Date("Sun Nov 20 2016 14:30:00 GMT+0900 (Seoul Time)");
 
 var DateDiff = {
 
@@ -6,28 +6,45 @@ var DateDiff = {
 		var t2 = d2.getTime();
 		var t1 = d1.getTime();
 
-		return parseInt((t2-t1)/1000%60);
+		var result = parseInt((t2-t1)/1000%60);
+
+		if(t2 - t1 < 0)
+			result = 0;
+
+		return result > 9? result : "0" + result;
 	},
 
 	inMinutes: function(d1, d2) {
 		var t2 = d2.getTime();
 		var t1 = d1.getTime();
 
-		return parseInt((t2-t1)/(1000*60) % 60);
+		var result = parseInt((t2-t1)/(1000*60) % 60);
+
+		if(t2 - t1 < 0)
+			result = 0;
+
+		return result > 9? result : "0" + result;
 	},
 
 	inHours: function(d1, d2) {
 		var t2 = d2.getTime();
 		var t1 = d1.getTime();
 
-		return parseInt((t2-t1)/(1000*60*60) % 48);
+		var result = parseInt((t2-t1)/(1000*60*60) % 24);
+
+		if(t2 - t1 < 0)
+			result = 0;
+
+		return result > 9? result : "0" + result;
 	},
 
     inDays: function(d1, d2) {
         var t2 = d2.getTime();
         var t1 = d1.getTime();
 
-        return parseInt((t2-t1)/(24*3600*1000));
+        var result = parseInt((t2-t1)/(24*3600*1000));
+
+        return result > 9? result : "0" + result;
     },
 
     inWeeks: function(d1, d2) {
