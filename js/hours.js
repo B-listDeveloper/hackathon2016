@@ -54,9 +54,6 @@ var DateDiff = {
 var setTime = function() {
 	var current = new Date();
 	var time = document.getElementById("time");
-
-	alert(goal);
-
 	time.innerHTML = DateDiff.inHours(current, goal) + ":" + DateDiff.inMinutes(current, goal) + ":" + DateDiff.inSeconds(current, goal);
 }
 
